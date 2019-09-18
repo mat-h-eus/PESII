@@ -9,8 +9,10 @@ export default class Main extends Component{
         productInfo: {},
         page : 1
     };
+
     componentDidMount(){
         this.loadProducts();
+
     }
 
     loadProducts = async (page = 1) => {
@@ -21,12 +23,14 @@ export default class Main extends Component{
 
         this.setState({products : docs, productInfo, page});
     }
+
     prevPage = () =>{
         const {page, productInfo} = this.state;
         if(page === 1) return;
         const numberPage = page - 1; 
         this.loadProducts(numberPage);
     }
+
     nextPage = () =>{
         const {page, productInfo} = this.state;
       
@@ -35,6 +39,7 @@ export default class Main extends Component{
         const numberPage = page+1;
         this.loadProducts(numberPage);
     }
+
     render(){
         const {products, productInfo, page} = this.state;
 

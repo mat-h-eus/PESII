@@ -5,11 +5,13 @@ import './styles.css';
 import Main from './pages/main';
 import Routes from './routes';
 import api from './services/api'
+import Map from './components/Map'
 
 const App = () => (
     <div>
         <Header/>
-        <Routes/>    
+        <Routes/>
+        <Map/>    
     </div>
 );
 

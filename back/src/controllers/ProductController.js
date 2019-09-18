@@ -1,27 +1,27 @@
 const mongoose = require('mongoose');
 
-const Rota = mongoose.model('Rota');
+const Product = mongoose.model('Product');
 
 module.exports = {
     async index(req, res){
         const { page = 1 } = req.query;
-        const Rotas = await Rota.paginate({}, { page, limit: 10 });
-        return res.json(Rotas);
+        const Products = await Product.paginate({}, { page, limit: 10 });
+        return res.json(Products);
     },
     async show(req, res){
-        const Rota = await Rota.findById(req.params.id);
-        return res.json(Rota);
+        const Product = await Product.findById(req.params.id);
+        return res.json(Product);
     },
     async store(req, res){
-        const Rota = await Rota.create(req.body);
-        return res.json(Rota);
+        const Product = await Product.create(req.body);
+        return res.json(Product);
     },
     async update(req, res){
-        const Rota = await Rota.findByIdAndUpdate(req.params.id, req.body, {new : true});
-        return res.json(Rota);
+        const Product = await Product.findByIdAndUpdate(req.params.id, req.body, {new : true});
+        return res.json(Product);
     },
     async destroy(req, res){
-        const Rota = await Rota.findByIdAndRemove(req.params.id);
+        const Product = await Product.findByIdAndRemove(req.params.id);
         return res.send();
     }
 }
