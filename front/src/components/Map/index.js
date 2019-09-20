@@ -1,51 +1,50 @@
 import React, { Component } from 'react';
-import OlMap from "ol/map";
-import OlView from "ol/view";
-import OlLayerTile from "ol/layer/tile";
-import OlSourceOSM from "ol/source/osm";
+import OlMap from "ol/Map";
+import OlView from "ol/View";
+import OlLayerTile from "ol/layer/Tile";
+import OlSourceOSM from "ol/source/OSM";
+import {transform} from 'ol/proj.js';
 
-export default class Map extends Component{
+export default class Mapa extends Component{
+    constructor(props) {
+        super(props);
     
-    componentDidMount(){
-        var featuresLayer = new ol.layer.Vector({
-            source: new ol.source.Vector({
-                features: []
+        this.state = { center: [-5951508.399108645, -2871007.9746428006], zoom: 13 };
+    
+        this.olmap = new OlMap({
+          target: null,
+          layers: [
+            new OlLayerTile({
+              source: new OlSourceOSM()
             })
+          ],
+          view: new OlView({
+            center: transform([-53.46330958485, -24.9614305105536], 'EPSG:4326', 'EPSG:3857'),
+            zoom: 13
+          })
         });
-
-        var map = new olMap({
-            target : "mapContainer",
-            layers:[
-                new ollayerTile({
-                    source : ol.layer.Tile({
-                        source : new olSourceOSM()
-                    })
-                }),
-                featuresLayer
-            ],
-            view: new olView({
-                center: [-11718716.28195593, 4869217.172379018],
-                zoom: 13
-            })
-        })
-
-        this.setState({
-            map : map,
-            featuresLayer: featuresLayer
-        })
     }
 
-    componentDidUpdate(prevProps, prevState){
-        this.state.featuresLayer.setSource(
-            new ol.source.Vector({
-                features: this.props.routes
-            })
-        )
-
+    updateMap() {
+        this.olmap.getView().setCenter(this.state.center);
+        this.olmap.getView().setZoom(this.state.zoom);
     }
-    render(){
+
+    componentDidMount() {
+        this.olmap.setTarget("map");
+    
+        // Listen to map changes
+        this.olmap.on("moveend", () => {
+          let center = this.olmap.getView().getCenter();
+          let zoom = this.olmap.getView().getZoom();
+          this.setState({ center, zoom });
+        });
+    }
+
+    render() {
+
         return (
-            <div ref="mapContainer"></div>
+          <div id="map" ></div>
         );
     }
 
