@@ -1,11 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './styles.css';
+import M from "materialize-css"
 
-const Header = () => (
-    <header id='main-header'>
-        <img src=""></img>
-        BTG - Bus Tracker Generico
-    </header>
-)
-
-export default Header;
+export default class Header extends Component{
+    componentDidMount(){
+        M.AutoInit();
+    }
+    render(){
+        return ( 
+            <div className='navbar-fixed green lighten-1'>
+                <nav className="green lighten-1 rem-bs">
+                    <div className = "main-header">
+                        <div>
+                            <img src=""></img>
+                            BTG - Bus Tracker Generico
+                        </div>
+                    </div>
+                </nav>
+            </div>  
+        )
+    }
+}

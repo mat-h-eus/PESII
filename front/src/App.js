@@ -1,14 +1,17 @@
-import React from 'react';
+import React,{ Component } from 'react';
 //import { directive } from '@babel/types';
 import Header from './components/Header'
 import './styles.css';
 import Routes from './routes';
+import 'materialize-css/dist/css/materialize.min.css';
 
-const App = () => (
-    <div>
-        <Header/>
-        <Routes/>  
-    </div>
-);
-
-export default App;
+export default class App extends Component{
+    render(){
+        return(
+            <div>
+                <Header/>
+                <Routes/>  
+            </div>
+        )
+    }
+}
