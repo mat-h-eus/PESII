@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 //import { directive } from '@babel/types';
 import Header from './components/Header'
 import './styles.css';
-import Routes from './routes';
+import Routes from './routes'
 import 'materialize-css/dist/css/materialize.min.css';
 
 export default class App extends Component{
@@ -10,7 +10,7 @@ export default class App extends Component{
         return(
             <div>
                 <Header/>
-                <Routes/>  
+                <Routes/>
             </div>
         )
     }

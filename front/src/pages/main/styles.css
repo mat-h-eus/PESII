@@ -63,3 +63,22 @@
 .product-list .actions button:hover[not(disabled)]{
     opacity: 0.7;
 }
+
+/*===========================*/
+
+.sidebar-wrapper {
+    min-height: 96vh;
+    width: 18%;
+    margin-left: 0rem;
+    position: absolute;
+    border: 1px solid #bdbdbd;
+    top:8.5vh;
+}
+
+
+
+
+
+
+
+  

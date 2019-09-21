@@ -1,0 +1,9 @@
+.tableWrapper{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.tabela{
+    max-width: 40%;
+}
