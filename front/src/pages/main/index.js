@@ -16,7 +16,7 @@ export default class Main extends Component{
         return (
             <div>
                 <Mapa/>
-                <div className="sidebar-wrapper grey lighten-2">
+                <div className="sidebar-wrapper green lighten-5">
                     <SideBar/>
                 </div>
                 <hr/>
