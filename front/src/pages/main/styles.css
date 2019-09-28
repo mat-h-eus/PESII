@@ -66,13 +66,19 @@
 
 /*===========================*/
 
+.map-wrapper{
+    position: relative;
+    float: left;
+    width: 100%;
+    border: 1px solid black;
+}
+
 .sidebar-wrapper {
-    min-height: 96vh;
-    width: 18%;
-    margin-left: 0rem;
-    position: absolute;
+    position: relative;
     border: 1px solid #c8e6c9;
-    top:8.5vh;
+    top:10px;
+    left: -10px;
+    margin-left: 20px;
 }
 
 

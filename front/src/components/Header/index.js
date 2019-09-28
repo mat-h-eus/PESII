@@ -12,7 +12,6 @@ export default class Header extends Component{
                 <nav className="green lighten-1 rem-bs">
                     <div className = "main-header">
                         <div>
-                            <img src=""></img>
                             BTG - Bus Tracker Generico
                         </div>
                     </div>

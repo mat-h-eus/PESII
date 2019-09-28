@@ -11,8 +11,8 @@ export default class SideBar extends Component{
     render(){
         return(
             <div className="customSideBar">
-                <div>
-                    <div class="input-field">
+                <div style = {{border: "1px solid red", display:"flex", alignItems:"", justifyContent:"center" }}>
+                    <div class="input-field" style = {{border: "1px solid red", display: "flex"}}>
                         <label style={{marginLeft:5}} className="label-icon" for="search"><i className="material-icons">search</i></label>
                         <input style={{paddingLeft:30, maxWidth:200}} id="search" type="search" required/>
                     </div>
