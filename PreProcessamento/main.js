@@ -1,15 +1,16 @@
 const fs = require('fs');
-const {Mapa} = require('./Mapa') 
+const { Mapa } = require('./Mapa')
 
-//leitura do geojson
+// leitura do geojson com o mapa de ruas
 let raw = fs.readFileSync('MapaSHP.geojson');
 let map = JSON.parse(raw);
 
-const {features} = map;
-
+// Definição do mapa
+const { features } = map;
 const mapaProcessado = new Mapa(map);
 
-console.log(mapaProcessado.getMapaProcessado());
-
-
-
+// faz o processamento do mapa unindo as fetures que formam uma mesma rua
+fs.writeFile("./teste.geojson", JSON.stringify(mapaProcessado.getMapaProcessado()), err => {
+    if (err)
+        console.log(err);
+});
