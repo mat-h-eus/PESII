@@ -67,18 +67,13 @@
 /*===========================*/
 
 .map-wrapper{
-    position: relative;
     float: left;
     width: 100%;
-    border: 1px solid black;
+    padding: -5px;
 }
 
 .sidebar-wrapper {
-    position: relative;
-    border: 1px solid #c8e6c9;
-    top:10px;
-    left: -10px;
-    margin-left: 20px;
+    width: 200px;
 }
 
 

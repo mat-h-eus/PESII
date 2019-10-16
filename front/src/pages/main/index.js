@@ -16,14 +16,13 @@ export default class Main extends Component{
     render(){
         return (
             <div>
-            <section style={{border:"1px solid black", height:"100%"}}>
-                <div className="map-wrapper">
-                    <Mapa/>
-                </div>
-                <div className="sidebar-wrapper green lighten-5">
+            <section style={{border:"1px solid black", height:"100%"}} className="row">
+                <div className="sidebar-wrapper green lighten-5 col s2">
                     <SideBar/>
                 </div>
-                
+                <div className="map-wrapper col s10">
+                    <Mapa/>
+                </div>   
             </section>
                 <hr/>
                 <Horarios/>
