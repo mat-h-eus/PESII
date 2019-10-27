@@ -3,6 +3,7 @@ import './styles.css';
 import M from "materialize-css"
 import Mapa from '../../components/Map';
 import SideBar from '../../components/SideBar';
+import SideBarB from '../../components/SideBarB';
 import Horarios from '../../components/Horarios'
 
 export default class Main extends Component{
@@ -11,18 +12,18 @@ export default class Main extends Component{
 
     componentDidMount(){
         M.AutoInit();
-        
+
     }
     render(){
         return (
             <div>
             <section style={{border:"1px solid black", height:"100%"}} className="row">
                 <div className="sidebar-wrapper green lighten-5 col s2">
-                    <SideBar/>
+                    <SideBarB/>
                 </div>
                 <div className="map-wrapper col s10">
                     <Mapa/>
-                </div>   
+                </div>
             </section>
                 <hr/>
                 <Horarios/>
