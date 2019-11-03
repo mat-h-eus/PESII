@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
 import './styles.css';
 import M from "materialize-css"
-import Mapa from '../../components/Map';
-import SideBar from '../../components/SideBar';
 import SideBarB from '../../components/SideBarB';
-import Horarios from '../../components/Horarios'
+import Control from '../../components/Control'
 
 export default class Main extends Component{
-    state = {
-    };
+    constructor(props){
+      super(props);
+
+      this.handleMapClick = this.handleMapClick.bind(this);
+      this.handleHorarioClick = this.handleHorarioClick.bind(this);
+
+      this.state = {
+        isMap: true,
+      };
+    }
+
+    handleMapClick(){
+      const isMap = this.state.isMap;
+      if(isMap)
+        return;
+      this.setState({isMap: true});
+    }
+
+    handleHorarioClick(){
+      const isMap = this.state.isMap;
+      if(isMap) {
+        this.setState({isMap: false});
+        return;
+      }
+      return;
+    }
 
     componentDidMount(){
         M.AutoInit();
@@ -19,15 +41,29 @@ export default class Main extends Component{
             <div>
             <section style={{border:"1px solid black", height:"100%"}} className="row">
                 <div className="sidebar-wrapper green lighten-5 col s2">
+                    <div>
+                      <MapButton onClick={this.handleMapClick} />
+                      <HorarioButton onClick={this.handleHorarioClick} />
+                    </div>
                     <SideBarB/>
                 </div>
                 <div className="map-wrapper col s10">
-                    <Mapa/>
+                    <Control isMap={this.state.isMap}/>
                 </div>
             </section>
-                <hr/>
-                <Horarios/>
             </div>
         )
     }
+}
+
+function MapButton(props){
+  return(
+    <button onClick={props.onClick}>MAP</button>
+  );
+}
+
+function HorarioButton(props){
+  return(
+    <button onClick={props.onClick}>Horario</button>
+  );
 }
