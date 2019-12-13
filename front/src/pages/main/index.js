@@ -56,7 +56,7 @@ export default class Main extends Component{
     render(){
         return (
             <div>
-            <section style={{border:"1px solid black", height:"100%"}} className="row">
+            <section style={{height:"100%"}} className="row">
                 <div className="sidebar-wrapper green lighten-5 col s2">
                     <div className="center">
                       <MapButton onClick={this.handleMapClick} />
@@ -67,13 +67,13 @@ export default class Main extends Component{
                       <div className="center">
                         {
                           this.state.rotas.map(rota => (
-                            <button className="box" key={rota._id} onClick={() => this.setState({rotaAtual : rota})}> {rota.nome}</button>
+                            <button className="box" key={rota._id} onClick={() => this.setState({rotaAtual : rota})}>{rota.nome}</button>
                           ))
                         }
                       </div>
                     </div>
                 </div>
-                <div className="map-wrapper col s10">
+                <div style={{padding:0}} className="map-wrapper col s10">
                     <Control isMap={this.state.isMap} rotaAtual={this.state.rotaAtual}/>
                 </div>
             </section>
