@@ -7,16 +7,16 @@ export default class Header extends Component{
         M.AutoInit();
     }
     render(){
-        return ( 
+        return (
             <div className='navbar-fixed green lighten-1'>
                 <nav className="green lighten-1 rem-bs">
                     <div className = "main-header">
                         <div>
-                            BTG - Bus Tracker Generico
+                            <big>🚌</big> BTG - Bus Tracker Generico <big>🚌</big>
                         </div>
                     </div>
                 </nav>
-            </div>  
+            </div>
         )
     }
 }

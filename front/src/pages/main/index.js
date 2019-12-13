@@ -58,18 +58,18 @@ export default class Main extends Component{
             <div>
             <section style={{border:"1px solid black", height:"100%"}} className="row">
                 <div className="sidebar-wrapper green lighten-5 col s2">
-                    <div>
+                    <div className="center">
                       <MapButton onClick={this.handleMapClick} />
                       <HorarioButton onClick={this.handleHorarioClick} />
                     </div>
                     <div>
                       <SearchBar/>
-                      <div>
+                      <div className="center">
                         {
                           this.state.rotas.map(rota => (
-                            <button key = {rota._id} onClick={() => this.setState({rotaAtual : rota})}> {rota.nome}</button>
+                            <button className="box" key={rota._id} onClick={() => this.setState({rotaAtual : rota})}> {rota.nome}</button>
                           ))
-                        }   
+                        }
                       </div>
                     </div>
                 </div>
@@ -84,21 +84,21 @@ export default class Main extends Component{
 
 function MapButton(props){
   return(
-    <button onClick={props.onClick}>MAP</button>
+    <button className="buttonMap" onClick={props.onClick}>Mapa</button>
   );
 }
 
 function HorarioButton(props){
   return(
-    <button onClick={props.onClick}>Horario</button>
+    <button className="buttonHor" onClick={props.onClick}>Horário</button>
   );
 }
 
 function SearchBar(){
   return(
     <div>
-      <label style={{marginLeft:5}} className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-      <input style={{paddingLeft:30, maxWidth:200}} id="search" type="search" required/>
+      <label  className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
+      <input  id="search" type="search" required/>
     </div>
   );
 }
