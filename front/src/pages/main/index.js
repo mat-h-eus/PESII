@@ -97,8 +97,8 @@ function HorarioButton(props){
 function SearchBar(){
   return(
     <div>
-      <label  className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
-      <input  id="search" type="search" required/>
+      <label style={{padding: 0, margin:0}} className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
+      <input style={{maxWidth:"80%"}} id="search" type="search" required/>
     </div>
   );
 }

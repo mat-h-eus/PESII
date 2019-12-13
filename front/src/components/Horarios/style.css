@@ -7,3 +7,7 @@
 .tabela{
     max-width: 40%;
 }
+th{
+  padding:0px;
+  border:1px solid black;
+}

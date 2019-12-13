@@ -8,7 +8,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 export default class App extends Component{
     render(){
         return(
-            <div style={{height: "100%"}}>
+            <div style={{padding: 0}}>
                 <Header/>
                 <Routes/>
             </div>
