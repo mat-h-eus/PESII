@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import M from 'materialize-css'
 import './style.css'
-import Product from 'C:/Users/Mateus Edival/Documents/Codigos/CodeWEB/PESII/front/src/pages/product'
 
 export default class SideBarB extends Component{
 
@@ -27,7 +26,6 @@ function SearchBar(){
 
   );
 }
-
 
 function Box(props){
   return(

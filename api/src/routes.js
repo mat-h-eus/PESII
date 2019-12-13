@@ -1,12 +1,12 @@
 const express = require('express');
 const routes = express.Router();
 
-const ProductController = require('./controllers/ProductController');
+const RotaController = require('./controllers/RotaController');
 
-routes.get('/products', ProductController.index);
-routes.get('/products/:id', ProductController.show);
-routes.post('/products',ProductController.store);
-routes.put('/products/:id',ProductController.update);
-routes.delete('/products/:id', ProductController.destroy);
+routes.get('/products', RotaController.index);
+routes.get('/products/:id', RotaController.show);
+routes.post('/products', RotaController.store);
+routes.put('/products/:id', RotaController.update);
+routes.delete('/products/:id', RotaController.destroy);
 
 module.exports = routes;

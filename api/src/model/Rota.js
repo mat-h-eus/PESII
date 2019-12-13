@@ -7,11 +7,11 @@ const RotaSchema = new mongoose.Schema({
         required: true
     },
     horaChegadaA:{
-        type: String,
+        type: Object,
         required: true
     },
     horaChegadaB:{
-        type: String,
+        type: Object,
         required: true
     },
     coordenadasPontoA : {
@@ -23,27 +23,26 @@ const RotaSchema = new mongoose.Schema({
         required : true
     },
     geomEtinerarioIda : {
-        type:String,
+        type:Object,
         required : true
     },
     geomEtinerarioVolta : {
-        type:String,
+        type:Object,
         required : true
     },
 });
 
 RotaSchema.plugin(mongoosePaginate);
 
-mongoose.model('Rota', RotaSchema);
+mongoose.model("Rota", RotaSchema);
 
 /*
 Estrutura dos parametros de hora de chegada
 
 Ex:
     horaChegadaA : {
-        chegadaSemana   : {"13:30", "15:20", "17:50"},
-        chegadaSabados  : {"13:30", "15:20", "17:50"},
-        chegadaDomingos : {"13:30", "15:20", "17:50"},
+        "chegadaSemana"   : {"13:30", "15:20", "17:50"},
+        "chegadaSabados"  : {"13:30", "15:20", "17:50"},
+        "chegadaDomingos" : {"13:30", "15:20", "17:50"},
     }
-
 */
