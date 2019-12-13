@@ -22,6 +22,14 @@ const RotaSchema = new mongoose.Schema({
         type:String,
         required : true
     },
+    nomePontoA:{
+        type: String,
+        required: true
+    },
+    nomePontoB:{
+        type: String,
+        required: true
+    },
     geomEtinerarioIda : {
         type:Object,
         required : true
