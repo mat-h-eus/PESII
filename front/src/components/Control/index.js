@@ -6,10 +6,10 @@ export default class Control extends Component
 {
   render(){
     if(this.props.isMap){
-      return  <Mapa/>;
+      return  <Mapa rotaAtual={this.props.rotaAtual}/>;
     }
     else {
-      return <Horarios/>;
+      return <Horarios rotaAtual={this.props.rotaAtual}/>;
     }
   }
 }

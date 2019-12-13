@@ -3,7 +3,6 @@ import M from 'materialize-css'
 import './style.css'
 
 export default class SideBarB extends Component{
-
     render(){
       return(
           <div>
